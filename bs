@@ -1,0 +1,17 @@
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        low=0
+        high=len(nums)-1
+        res=[]
+        while(low<=high):
+            mid=(low+high)//2
+            for i in range(len(nums)):
+                if  (nums[i]==target):
+                    res.append(i)
+            return res 
+            if(nums[mid]<target):
+                low=mid+1
+               
+            else:
+                high=mid-1
+        return [-1,-1]
